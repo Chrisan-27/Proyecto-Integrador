@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parqueadero PUCETEC - Zona H</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Parqueadero PUCETEC - Zona H</h1>
+        <p>Consulta de disponibilidad estimada según hora, vehículo y preferencia</p>
+    </header>
+
+    <div class="contenedor">
+
+        <div class="resumen-capacidad">
+            <h2>Distribución del parqueadero</h2>
+            <p><strong>Capacidad física total: 87 espacios</strong></p>
+            <p>78 espacios generales + 4 accesibles + 1 reservado + 4 para motos.</p>
+        </div>
+
+        <div class="consulta">
+            <h2>Consultar disponibilidad</h2>
+
+            <div class="campo">
+                <label for="hora">Hora de consulta:</label>
+                <input type="number" id="hora" min="0" max="23" placeholder="0 - 23">
+            </div>
+
+            <div class="campo">
+                <label for="tipo_vehiculo">Tipo de vehículo:</label>
+                <select id="tipo_vehiculo">
+                    <option value="">Seleccione</option>
+                    <option value="automovil">Automóvil</option>
+                    <option value="moto">Motocicleta</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="preferencia">Preferencia de estacionamiento:</label>
+                <select id="preferencia">
+                    <option value="">Seleccione</option>
+                    <option value="normal">Parqueadero normal</option>
+                    <option value="accesible">Parqueadero accesible para personas con discapacidad</option>
+                </select>
+            </div>
+
+            <button onclick="consultarDisponibilidad()">
+                Consultar
+            </button>
+        </div>
+
+        <div class="recomendacion" id="recomendacion">
+            <h2>Recomendación de estacionamiento</h2>
+
+            <p class="datos-consulta">
+                <strong>Hora:</strong> <span id="hora_resultado">-</span> |
+                <strong>Vehículo:</strong> <span id="vehiculo_resultado">-</span> |
+                <strong>Preferencia:</strong> <span id="preferencia_resultado">-</span>
+            </p>
+
+            <p class="principal" id="recomendacion_principal">
+                Realiza una consulta para obtener una recomendación.
+            </p>
+            <p id="recomendacion_2"></p>
+            <p id="recomendacion_3"></p>
+            <p id="recomendacion_4"></p>
+        </div>
+
+        <div class="resultado" id="resultado">
+            <h2>Plazas disponibles</h2>
+
+            <p><strong>Nivel estimado:</strong> <span id="nivel_resultado">-</span></p>
+            <p><strong>Ocupación estimada:</strong> <span id="porcentaje_resultado">-</span></p>
+
+            <div class="seccion">
+                <h3>Zona 1 - puestos 1 al 18</h3>
+                <p id="zona_1">Sin consulta</p>
+                <p class="detalle">18 espacios generales. El espacio reservado se informa aparte.</p>
+            </div>
+
+            <div class="seccion">
+                <h3>Zona 2 - puestos 19 al 54</h3>
+                <p id="zona_2">Sin consulta</p>
+                <p class="detalle">36 espacios generales.</p>
+            </div>
+
+            <div class="seccion">
+                <h3>Zona 3 - puestos 55 al 73</h3>
+                <p id="zona_3">Sin consulta</p>
+                <p class="detalle">4 accesibles (55 al 58) + 15 espacios generales.</p>
+            </div>
+
+            <div class="seccion">
+                <h3>Zona 4 - puestos 74 al 82</h3>
+                <p id="zona_4">Sin consulta</p>
+                <p class="detalle">9 espacios generales.</p>
+            </div>
+
+            <div class="seccion especial">
+                <h3>Estacionamiento de motos</h3>
+                <p id="motos_resultado">4 espacios físicos para motocicletas.</p>
+            </div>
+
+            <p class="total" id="total_linea">
+                <strong>Total disponible estimado:</strong>
+                <span id="total_disponible">-</span>
+            </p>
+        </div>
+
+        <div class="nota">
+            <strong>Importante:</strong>
+            La capacidad y distribución provienen del plano del Parqueadero H.
+            Los puestos accesibles son 55, 56, 57 y 58 y se consideran únicamente cuando
+            el usuario selecciona la preferencia accesible. El espacio reservado no forma
+            parte de las recomendaciones generales. La ocupación por horario todavía es
+            una estimación académica y no un conteo en tiempo real.
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

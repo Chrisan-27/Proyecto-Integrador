@@ -3,31 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parqueadero PUCETEC - Zona H</title>
+    <title>PUCE Parking - Parqueadero H</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
     <header>
         <h1>Parqueadero PUCETEC - Zona H</h1>
-        <p>Consulta de disponibilidad estimada según hora, vehículo y preferencia</p>
+        <p>Estimación y recomendación de estacionamiento - Parqueadero H</p>
+        <p class="subtitulo">Facultad de Arquitectura y Urbanismo - PUCE</p>
     </header>
 
     <div class="contenedor">
-
-        <div class="resumen-capacidad">
+        <section class="resumen-capacidad">
             <h2>Distribución del parqueadero</h2>
             <p><strong>Capacidad física total: 87 espacios</strong></p>
-            <p>78 espacios generales + 4 accesibles + 1 reservado + 4 para motos.</p>
-        </div>
+            <p>78 espacios generales + 4 espacios accesibles + 1 espacio reservado + 4 espacios para motos.</p>
 
-        <div class="consulta">
+            <p class="detalle">Los puestos 55, 56, 57 y 58 se consideran espacios accesibles.
+                El espacio reservado y los espacios accesibles no forman parte
+                de la recomendación de estacionamiento general.</p>
+        </section>
+
+        <section class="consulta">
             <h2>Consultar disponibilidad</h2>
 
             <div class="campo">
                 <label for="hora">Hora de consulta:</label>
-                <input type="number" id="hora" min="0" max="23" placeholder="0 - 23">
+                <input type="number" id="hora" min="7" max="20" placeholder="7 - 20">
+                <p class="ayuda">Horario de consulta: 07:00 a 20:59.</p>
             </div>
 
             <div class="campo">
@@ -49,11 +53,11 @@
             </div>
 
             <button onclick="consultarDisponibilidad()">
-                Consultar
+                Calcular y recomendar
             </button>
-        </div>
+        </section>
 
-        <div class="recomendacion" id="recomendacion">
+        <section class="recomendacion" id="recomendacion">
             <h2>Recomendación de estacionamiento</h2>
 
             <p class="datos-consulta">
@@ -62,19 +66,24 @@
                 <strong>Preferencia:</strong> <span id="preferencia_resultado">-</span>
             </p>
 
+            <p>
+                <strong>Franja:</strong> <span id="franja_resultado">-</span> |
+                <strong>Ocupación estimada:</strong> <span id="porcentaje_resultado">-</span>
+            </p>
+
             <p class="principal" id="recomendacion_principal">
                 Realiza una consulta para obtener una recomendación.
             </p>
             <p id="recomendacion_2"></p>
             <p id="recomendacion_3"></p>
             <p id="recomendacion_4"></p>
-        </div>
+        </section>
 
-        <div class="resultado" id="resultado">
-            <h2>Plazas disponibles</h2>
+        <section class="resultado" id="resultado">
+            <h2>Plazas disponibles estimadas</h2>
 
             <p><strong>Nivel estimado:</strong> <span id="nivel_resultado">-</span></p>
-            <p><strong>Ocupación estimada:</strong> <span id="porcentaje_resultado">-</span></p>
+            <p><strong>Ocupación estimada:</strong> <span id="porcentaje_resultado_2">-</span></p>
 
             <div class="seccion">
                 <h3>Zona 1 - puestos 1 al 18</h3>
@@ -109,16 +118,16 @@
                 <strong>Total disponible estimado:</strong>
                 <span id="total_disponible">-</span>
             </p>
-        </div>
+        </section>
 
-        <div class="nota">
+        <section class="nota">
             <strong>Importante:</strong>
             La capacidad y distribución provienen del plano del Parqueadero H.
             Los puestos accesibles son 55, 56, 57 y 58 y se consideran únicamente cuando
             el usuario selecciona la preferencia accesible. El espacio reservado no forma
-            parte de las recomendaciones generales. La ocupación por horario todavía es
-            una estimación académica y no un conteo en tiempo real.
-        </div>
+            parte de las recomendaciones generales. El sistema realiza una estimación y no un conteo en tiempo real.
+            Los porcentajes utilizados son datos de prueba para el proyecto.
+        </section>
 
     </div>
 

@@ -2,7 +2,7 @@
 
 Proyecto integrador desarrollado para PUCE TEC.
 
-PUCE Parking es una página web que permite estimar la disponibilidad de espacios en el Parqueadero H de la PUCE según la hora, el tipo de vehículo y la preferencia de estacionamiento.
+PUCE Parking es un prototipo de sistema web que permite estimar la disponibilidad de espacios en el Parqueadero H de la PUCE según la hora, el tipo de vehículo y la preferencia de estacionamiento.
 
 ## Tecnologías utilizadas
 
